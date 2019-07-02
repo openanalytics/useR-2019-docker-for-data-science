@@ -17,20 +17,21 @@ See abstract on the [useR!2019 website](http://user2019.r-project.org/tutorials/
 
 ### Docker images to pull
 
+```
 docker pull hello-world
 docker pull openanalytics/r-base
 docker pull openanalytics/shinyproxy
 docker pull openanalytics/shinyproxy-demo
 docker pull openanalytics/shinyproxy-dash-demo
 docker pull openanalytics/shinyproxy-rstudio-ide-demo
-
+```
 ## Git repositories to clone
 
-https://github.com/openanalytics/r-base
-https://github.com/openanalytics/shinyproxy-template
-https://github.com/openanalytics/shinyproxy-demo
-https://github.com/openanalytics/shinyproxy-config-examples
-https://github.com/openanalytics/shinyproxy-dash-demo
-https://github.com/openanalytics/shinyproxy-rstudio-ide-demo
+- https://github.com/openanalytics/r-base
+- https://github.com/openanalytics/shinyproxy-template
+- https://github.com/openanalytics/shinyproxy-demo
+- https://github.com/openanalytics/shinyproxy-config-examples
+- https://github.com/openanalytics/shinyproxy-dash-demo
+- https://github.com/openanalytics/shinyproxy-rstudio-ide-demo
 
 **See you in Toulouse!**
