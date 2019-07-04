@@ -24,6 +24,10 @@ docker pull openanalytics/shinyproxy
 docker pull openanalytics/shinyproxy-demo
 docker pull openanalytics/shinyproxy-dash-demo
 docker pull openanalytics/shinyproxy-rstudio-ide-demo
+docker pull openanalytics/scheduled-reporting-demo
+docker pull openanalytics/scheduled-reporting-demo-report
+docker pull openanalytics/rdepot-repo
+docker pull openanalytics/rdepot-app
 ```
 ## Git repositories to clone
 
@@ -33,5 +37,7 @@ docker pull openanalytics/shinyproxy-rstudio-ide-demo
 - https://github.com/openanalytics/shinyproxy-config-examples
 - https://github.com/openanalytics/shinyproxy-dash-demo
 - https://github.com/openanalytics/shinyproxy-rstudio-ide-demo
+- https://github.com/openanalytics/scheduled-reporting-demo
+- https://github.com/openanalytics/rdepot-demo
 
 **See you in Toulouse!**
