@@ -28,6 +28,7 @@ docker pull openanalytics/scheduled-reporting-demo
 docker pull openanalytics/scheduled-reporting-demo-report
 docker pull openanalytics/rdepot-repo
 docker pull openanalytics/rdepot-app
+docker pull openanalytics/rtq-client
 ```
 ## Git repositories to clone
 
@@ -39,5 +40,7 @@ docker pull openanalytics/rdepot-app
 - https://github.com/openanalytics/shinyproxy-rstudio-ide-demo
 - https://github.com/openanalytics/scheduled-reporting-demo
 - https://github.com/openanalytics/rdepot-demo
+- https://github.com/openanalytics/rtq-docker
+
 
 **See you in Toulouse!**
