@@ -29,6 +29,7 @@ docker pull openanalytics/scheduled-reporting-demo-report
 docker pull openanalytics/rdepot-repo
 docker pull openanalytics/rdepot-app
 docker pull openanalytics/rtq-client
+docker pull apache/zeppelin:0.8.1
 ```
 ## Git repositories to clone
 
@@ -37,6 +38,7 @@ docker pull openanalytics/rtq-client
 - https://github.com/openanalytics/shinyproxy-demo
 - https://github.com/openanalytics/shinyproxy-config-examples
 - https://github.com/openanalytics/shinyproxy-dash-demo
+- https://github.com/openanalytics/shinyproxy-zeppelin-notebook-demo
 - https://github.com/openanalytics/shinyproxy-rstudio-ide-demo
 - https://github.com/openanalytics/scheduled-reporting-demo
 - https://github.com/openanalytics/rdepot-demo
