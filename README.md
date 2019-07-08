@@ -35,6 +35,7 @@ docker pull openanalytics/scheduled-reporting-demo-report
 docker pull openanalytics/rdepot-repo
 docker pull openanalytics/rdepot-app
 docker pull openanalytics/rtq-client
+docker pull redis
 docker pull apache/zeppelin:0.8.1
 ```
 ## Git repositories to clone
