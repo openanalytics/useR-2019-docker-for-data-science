@@ -21,6 +21,7 @@ See abstract on the [useR!2019 website](http://user2019.r-project.org/tutorials/
 docker pull hello-world
 docker pull openanalytics/r-base
 docker pull openanalytics/shinyproxy
+docker pull openanalytics/shinyproxy-snapshot
 docker pull openanalytics/shinyproxy-demo
 docker pull openanalytics/shinyproxy-dash-demo
 docker pull openanalytics/shinyproxy-rstudio-ide-demo
