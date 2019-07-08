@@ -10,8 +10,13 @@ See abstract on the [useR!2019 website](http://user2019.r-project.org/tutorials/
 
 ### Software to install
 
+By all means:
+
 - [Docker](https://docs.docker.com/install/)
 - [Docker Compose](https://docs.docker.com/compose/install/)
+
+Optionally:
+
 - [Kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 - [Minikube](https://kubernetes.io/docs/tasks/tools/install-minikube/)
 
