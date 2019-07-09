@@ -1,0 +1,42 @@
+proxy:
+  title: Open Analytics Shiny Proxy
+  logo-url: file:///etc/shinyproxy/logo.png
+  landing-page: /
+  authentication: simple
+  admin-groups: scientists
+  # Example: 'simple' authentication configuration
+  users:
+  - name: hans
+    password: password
+    groups: scientists
+  - name: peter
+    password: password
+    groups: mathematicians
+  # Docker configuration
+  docker:
+    internal-networking: true
+  specs:
+  - id: 01_hello
+    display-name: Hello Application
+    description: Application which demonstrates the basics of a Shiny app
+    container-cmd: ["R", "-e", "shinyproxy::run_01_hello()"]
+    container-image: openanalytics/shinyproxy-demo
+    access-groups: [scientists, mathematicians]
+    container-network: sp-example-net
+  - id: 06_tabsets
+    display-name: We want tabs!
+    container-cmd: ["R", "-e", "shinyproxy::run_06_tabsets()"]
+    container-image: openanalytics/shinyproxy-demo
+    access-groups: scientists
+    container-network: sp-example-net
+  - id: euler                                               
+    display-name: Euler's Number  
+    description: Compute Euler's number in arbitrary precision
+    container-cmd: ["R", "-e", "shiny::runApp('/root/euler')"]
+    container-image: openanalytics/shinyproxy-template
+    access-groups: [scientists, mathematicians]
+    container-network: sp-example-net
+
+logging:
+  file:
+    shinyproxy.log

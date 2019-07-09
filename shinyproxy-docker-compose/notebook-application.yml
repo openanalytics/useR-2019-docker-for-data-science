@@ -1,0 +1,59 @@
+proxy:
+  title: Open Analytics Shiny Proxy
+  logo-url: file:///etc/shinyproxy/logo.png
+  landing-page: /
+  authentication: simple
+  admin-groups: scientists
+  # Example: 'simple' authentication configuration
+  users:
+  - name: hans
+    password: password
+    groups: scientists
+  - name: peter
+    password: password
+    groups: mathematicians
+  # Docker configuration
+  docker:
+    internal-networking: true
+  specs:
+  - id: 01_hello
+    display-name: Hello Application
+    description: Application which demonstrates the basics of a Shiny app
+    container-cmd: ["R", "-e", "shinyproxy::run_01_hello()"]
+    container-image: openanalytics/shinyproxy-demo
+    access-groups: [scientists, mathematicians]
+    container-network: sp-example-net
+  - id: 06_tabsets
+    display-name: We want tabs!
+    container-cmd: ["R", "-e", "shinyproxy::run_06_tabsets()"]
+    container-image: openanalytics/shinyproxy-demo
+    access-groups: scientists
+    container-network: sp-example-net
+  - id: euler                                               
+    display-name: Euler's Number  
+    description: Compute Euler's number in arbitrary precision
+    container-cmd: ["R", "-e", "shiny::runApp('/root/euler')"]
+    container-image: openanalytics/shinyproxy-template
+    access-groups: [scientists, mathematicians]
+    container-network: sp-example-net
+  - id: dash-demo
+    display-name: Dash Demo Application
+    port: 8050
+    container-cmd: ["python", "app.py"]
+    container-image: openanalytics/shinyproxy-dash-demo
+    container-network: sp-example-net
+  - id: rstudio
+    container-image: openanalytics/shinyproxy-rstudio-ide-demo
+    container-env:
+      DISABLE_AUTH: true
+      USER: "#{proxy.userId}"
+    port: 8787
+    container-volumes: [ "/tmp/#{proxy.userId}:/home/#{proxy.userId}" ]
+    container-network: sp-example-net
+  - id: zeppelin
+    display-name: Apache Zeppelin
+    description: Apache Zeppelin Official Docker
+    container-image: apache/zeppelin:0.8.1
+    container-volumes: [ "/tmp/zeppelin/#{proxy.userId}/notebook:/zeppelin/notebook", "/tmp/zeppelin/#{proxy.userId}/logs:/zeppelin/logs", "/tmp/zeppelin/conf:/zeppelin/conf" ]
+    container-network: sp-example-net
+    port: 8080

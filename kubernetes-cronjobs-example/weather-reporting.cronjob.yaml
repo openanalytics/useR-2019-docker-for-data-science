@@ -1,0 +1,23 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: weather-reporting
+spec:
+  schedule: "*/20 * * * *"
+  concurrencyPolicy: Forbid
+  jobTemplate:
+    spec:
+      backoffLimit: 0
+      template:
+        spec:
+          containers:
+          - name: weather-reporting
+            imagePullPolicy: Always
+            image: r-weather-report
+            args:
+            - R
+            - -q
+            - -e
+            - rmarkdown::render('weather.Rmd')
+          restartPolicy: Never
+

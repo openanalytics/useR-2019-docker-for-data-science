@@ -1,0 +1,24 @@
+version: '3.7'
+services:
+  # TODO add nginx service in front
+  shinyproxy:
+    #image: openanalytics/shinyproxy
+    image: openanalytics/shinyproxy-snapshot
+    user: root:root
+    hostname: shinyproxy
+    restart: unless-stopped
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /var/run/docker.sock:/var/run/docker.sock:rw
+      - ./notebook-application.yml:/opt/shinyproxy/application.yml:ro
+      - ./zeppelin-conf:/tmp/zeppelin/conf 
+    ports:
+      - 8080:8080
+    networks:
+      - sp-example-net
+networks:
+  sp-example-net:
+    name: sp-example-net
+    ipam:
+      config:
+      - subnet: 192.168.11.0/24

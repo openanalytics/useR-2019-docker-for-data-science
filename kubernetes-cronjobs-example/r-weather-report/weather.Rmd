@@ -1,0 +1,26 @@
+---
+title: "Weather Report"
+author: "Open Analytics"
+output:
+  html_document:
+    toc: false
+---
+
+# Hello UseR 2019!
+
+```{r}
+url <- "https://data.toulouse-metropole.fr/api/v2/catalog/datasets/42-station-meteo-parc-compans-cafarelli/records?rows=20&pretty=false&timezone=UTC"
+
+response <- httr::GET(url)
+
+result <- httr::content(response)
+
+t <- strptime(sapply(result$records, function(x) x$record$timestamp), format = "%Y-%m-%dT%H:%M:%S")
+temp <- -50 + sapply(result$records, function(x) {
+      as.numeric(x$record$fields$temperature_partie_entiere) +
+      as.numeric(x$record$fields$temperature_partie_decimale) / 10
+    })
+
+plot(t[order(t)], temp[order(t)], pch = 20, bty = "n", xlab = "timestamp",
+    ylab = "temperature (°C)", type = "p")
+```
