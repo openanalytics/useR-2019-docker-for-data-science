@@ -20,6 +20,11 @@ Optionally:
 - [Kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 - [Minikube](https://kubernetes.io/docs/tasks/tools/install-minikube/)
 
+**Note**: The Docker daemon needs to be configured to accept connections over
+TCP, see https://www.shinyproxy.io/getting-started/#docker-startup-options
+This will be explained in the tutorial, but it does not harm to already
+configure it.
+
 ### Docker images to pull
 
 ```
