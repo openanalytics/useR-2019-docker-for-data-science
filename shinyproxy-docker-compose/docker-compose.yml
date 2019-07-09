@@ -10,7 +10,7 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /var/run/docker.sock:/var/run/docker.sock:rw
-      - ./notebook-application.yml:/opt/shinyproxy/application.yml:ro
+      - ./simple-application.yml:/opt/shinyproxy/application.yml:ro
       - ./zeppelin-conf:/tmp/zeppelin/conf 
     ports:
       - 8080:8080

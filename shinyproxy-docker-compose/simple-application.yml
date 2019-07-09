@@ -1,5 +1,5 @@
 proxy:
-  title: Open Analytics Shiny Proxy
+  title: useR!2019 Shiny Proxy
   logo-url: file:///etc/shinyproxy/logo.png
   landing-page: /
   authentication: simple
